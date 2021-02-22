@@ -17,7 +17,7 @@ public function mayores(){
         $datos2 = mysqli_fetch_array($resultado2);
 
 
-        if ($datos2[0] >= 2){
+        if ($datos2[0] >= 10){
            $_SESSION["masmodelos"] = $row[2];
         }
     }

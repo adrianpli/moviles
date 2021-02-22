@@ -14,7 +14,7 @@
 <body>
 <h4 style="text-align: right">Fecha de hoy: <?php echo $_SESSION["hoy"] = date("Y - n - j");   ?></h4>
 <h4 style="text-align: right">Administrador: <?php echo $_SESSION["admin"] ?></h4>
-<h1 class="centrar-texto">Registros de la semana</h1>
+<h1 class="centrar-texto">Registros de la semana: <?php if (isset($_SESSION["numrows"])) echo $_SESSION["numrows"] ?> registros</h1>
 
 
 

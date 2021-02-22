@@ -6,7 +6,9 @@ require "app/Models/actualizar.php";
 require "app/Models/eliminar.php";
 require "app/Models/masRAM.php";
 require "app/Models/filtrar.php";
+require "app/Models/masModelos.php";
 
+use inventario\masModelos;
 use inventario\filtrar;
 use inventario\eliminar;
 use inventario\actualizar;
@@ -21,6 +23,8 @@ class sistemaController
         require "app/Views/inicio.php";
     }
     function almacen(){
+        $modelos = new masModelos();
+        $modelos->mayores();
         require "app/Views/almacen.php";
     }
     function iniciarSesion(){
@@ -69,5 +73,9 @@ class sistemaController
         require "app/Views/registrosSemana.php";
         $filtro = new filtrar();
         $filtro -> semanaREG($_POST["semana"]);
+    }
+    function masModels(){
+        $modelos = new masModelos();
+        $modelos->mayores();
     }
 }

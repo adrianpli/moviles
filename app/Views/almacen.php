@@ -11,10 +11,6 @@ $resultado = mysqli_query($conex,$consulta);
 
 ?>
 
-
-
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,8 +24,10 @@ $resultado = mysqli_query($conex,$consulta);
     <title>inventario</title>
 </head>
 <body>
+
 <h4 style="text-align: right">Fecha de hoy: <?php echo $_SESSION["hoy"] = date("Y - n - j");   ?></h4>
 <h4 style="text-align: right">Administrador: <?php echo $_SESSION["admin"] ?></h4>
+<h5 style="text-align: right">Marca con mas de 10 modelos: <?php if (isset($_SESSION["masmodelos"])) echo $_SESSION["masmodelos"]; ?></h5>
 <h1 class="centrar-texto">Inventario</h1>
 
 <form class="formulario" method="POST" action="http://localhost/moviles/index.php?controller=sistema&action=registrarCelular">
@@ -109,6 +107,7 @@ $resultado = mysqli_query($conex,$consulta);
     ?>
 </table>
 <br><br>
+<h3 class="centrar-texto">Actualizar algun registro</h3>
 <form class="formulario" method="POST" action="http://localhost/moviles/index.php?controller=sistema&action=actualizar">
     <label>Ingrese el ID a editar</label>
     <input type="number" size="3" name="id">
@@ -140,6 +139,7 @@ $resultado = mysqli_query($conex,$consulta);
     </table>
 </form>
 <br><br>
+<h3 class="centrar-texto">Eliminar algun registro</h3>
 <form class="formulario" method="POST" action="http://localhost/moviles/index.php?controller=sistema&action=eliminarRegistro">
 <label>Ingrese el ID a eliminar</label>
     <input type="number"size="3" name="id">
@@ -162,6 +162,7 @@ $resultado = mysqli_query($conex,$consulta);
 <label class="centrar-texto">Dispositivo con mas RAM: <?php if (isset($_SESSION["mayor"])) echo $_SESSION["mayor"]; ?></label>
 </center>
 <br><br><br>
+<h3 class="centrar-texto">Reporte semanal</h3>
 <form class="formulario" method="POST" action="http://localhost/moviles/index.php?controller=sistema&action=filtrar">
     <input type="date" value="2021-02-22" name="semana">
     <input type="submit" class="boton" value="Ver registros de la semana">

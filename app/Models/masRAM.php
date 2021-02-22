@@ -39,9 +39,6 @@ class masRAM
             <?php
         }
         ?>
-<script>
-    window.location = "http://localhost/moviles/index.php?controller=sistema&action=almacen"
-</script>
 <?php
     }
 

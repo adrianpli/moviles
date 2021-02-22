@@ -14,9 +14,7 @@ public function registrar(){
     $consulta->execute();
     ?>
 <script>
-
     window.location = "http://localhost/moviles/index.php?controller=sistema&action=almacen";
-
 </script>
 
 <?php

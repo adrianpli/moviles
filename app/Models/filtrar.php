@@ -6,13 +6,13 @@ namespace inventario;
 
 class filtrar
 {
-
-
     public function semanaREG($hoy){
         $conexion = new conexion();
-        $consulta = "SELECT * FROM celulares WHERE FECHA_REG BETWEEN DATE_ADD('$hoy', INTERVAL -7 DAY) AND '$hoy';";
-        $resultado = mysqli_query($conexion->conex,$consulta);
-
+        for ($i=0;$i<2;$i++) {
+            $consulta = "SELECT * FROM celulares WHERE FECHA_REG BETWEEN DATE_ADD('$hoy', INTERVAL -7 DAY) AND '$hoy';";
+            $resultado = mysqli_query($conexion->conex, $consulta);
+            $_SESSION["numrows"] = mysqli_num_rows($resultado);
+        }
 ?>
         <table class="table">
 

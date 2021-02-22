@@ -4,6 +4,7 @@
 namespace inventario;
 
 class Consultas  {
+
     public function __construct(){
         parent::__construct();
     }
@@ -16,6 +17,7 @@ class Consultas  {
         $_SESSION["id"] = $datos -> ID_ADMIN;
         return true;
     }
+
 
 }
 ?>
